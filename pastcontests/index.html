@@ -22,7 +22,7 @@
                     <td style="text-align: left;">
                         <span style="line-height: 1"><b>  </b></span>
                         <img src="../header-footer/logo-Shanghai-small.png" alt="Logo" class="header-logo">
-                        <span style="line-height: 1"><b>INTEGIRLS Shanghai</b></span>
+                        <span style="line-height: 1"><b>INTEGIRLS SHANGHAI</b></span>
                     </td>
                     <td style="text-align: right;">
                         <a href="../index.html">Home</a> |
@@ -55,46 +55,25 @@
                     <div id="Spring 2025" class="year-content">
                         <h2>Spring 2025 Contest</h2>
                         <p>Thank you to all our contest participants!</p>
-                        <h3>Middle School Division</h3>
                         <ul>
-                            <li><a href="https://drive.google.com/file/d/1T7d-sr23klDiJc2Ku-18dTU1jnfjFuMt/view" target="_blank">Individual Round Problems</a></li>
-                            <li><a href="https://drive.google.com/file/d/16ZaPzhkU7OvcqJNpu2NyJQZpEluLo5UD/view" target="_blank">Team Round Problems</a></li>
-                            <li><a href="https://drive.google.com/file/d/14lpPdnOiQDHyU7VNREgjjGYh5DyG92zw/view" target="_blank">Relay Round Problems</a></li>
-                            <li><a href="https://drive.google.com/file/d/1Rt-Lo1L-QdvYPAXArRm5yf0M689fAzqQ/view" target="_blank">Answers to All Rounds</a></li>
+                            <li><a href="../spring2025papers/Individual Round.pdf" target="_blank">Individual Round Problems</a></li>
+                            <li><a href="../spring2025papers/Team.pdf" target="_blank">Team Round Problems</a></li>
+                            <li><a href="../spring2025papers/Relay 1.pdf" target="_blank">Relay Round 1 Problems</a></li>
+                            <li><a href="../spring2025papers/Relay 2.pdf" target="_blank">Relay Round 2 Problems</a></li>
                         </ul>
-                        <h3>High School Division</h3>
+                        <h3 class="smaller-heading">ScoreBoard</h3>
                         <ul>
-                            <li><a href="https://drive.google.com/file/d/1T7d-sr23klDiJc2Ku-18dTU1jnfjFuMt/view" target="_blank">Individual Round Problems</a></li>
-                            <li><a href="https://drive.google.com/file/d/16ZaPzhkU7OvcqJNpu2NyJQZpEluLo5UD/view" target="_blank">Team Round Problems</a></li>
-                            <li><a href="https://drive.google.com/file/d/14lpPdnOiQDHyU7VNREgjjGYh5DyG92zw/view" target="_blank">Relay Round Problems</a></li>
-                            <li><a href="https://drive.google.com/file/d/1Rt-Lo1L-QdvYPAXArRm5yf0M689fAzqQ/view" target="_blank">Answers to All Rounds</a></li>
-                        </ul>
-                        <h3>Results</h3>
-                        <!-- Type 1 Results: listing out winners-->
-                        <h4>Middle School Division</h4>
-                        <ul>
-                            <li>1st Place: Team A</li>
-                            <li>2nd Place: Team B</li>
-                            <li>3rd Place: Team C</li>
-                        </ul>
-                        <h4>High School Division</h4>
-                        <ul>
-                            <li>1st Place: Team A</li>
-                            <li>2nd Place: Team B</li>
-                            <li>3rd Place: Team C</li>
+                            <li><a href="../spring2025papers/scoreBoard.pdf" target="_blank">scoreBoard</a></li>
                         </ul>
                         <!-- Type 2 Results: linking to a results document -->
 
-                        <!-- Add contest details, results, problems, etc. -->
+                        <!-- Add contest details, results, etc. -->
                     </div>
 
 
                 </div>
 
-                <!-- Default content shown when no contest is selected -->
-                <div class="default-content">
-                    <p>Select a past contest from the sidebar to see problems, answers, and winners.</p>
-                </div>
+
             </div>
             
 
@@ -114,24 +93,28 @@
             document.addEventListener('DOMContentLoaded', function() {
                 const yearLinks = document.querySelectorAll('.year-link');
                 const yearContents = document.querySelectorAll('.year-content');
-                const defaultContent = document.querySelector('.default-content');
+
+                // Default show the most recent contest (first one in the list)
+                if (yearLinks.length > 0 && yearContents.length > 0) {
+                    yearLinks[0].classList.add('active');
+                    const mostRecentYear = yearLinks[0].getAttribute('data-year');
+                    const mostRecentContent = document.getElementById(mostRecentYear);
+                    if (mostRecentContent) {
+                        mostRecentContent.classList.add('active');
+                    }
+                }
 
                 yearLinks.forEach(link => {
                     link.addEventListener('click', function(e) {
                         e.preventDefault();
-                        
+                         
                         // Remove active class from all links and content
                         yearLinks.forEach(l => l.classList.remove('active'));
                         yearContents.forEach(c => c.classList.remove('active'));
-                        
-                        // Hide default content
-                        if (defaultContent) {
-                            defaultContent.style.display = 'none';
-                        }
-                        
+                         
                         // Add active class to clicked link
                         this.classList.add('active');
-                        
+                         
                         // Show corresponding content
                         const targetYear = this.getAttribute('data-year');
                         const targetContent = document.getElementById(targetYear);

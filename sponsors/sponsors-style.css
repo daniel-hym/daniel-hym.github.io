@@ -47,11 +47,12 @@ p{
 
 /*homepage css:*/
 .hero {
-    background-image: url('https://img.freepik.com/free-vector/sunset-city-background_1092-42.jpg'); /* replace with your chapter's background image */
+    background-image: url('../images/sponsors.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* allows the background image to stay fixed while scrolling */
-    height: 50vh;
+    background-attachment: scroll;
+    height: auto;
+    min-height: 75vh;
     margin: 0;
     text-align: center;
     display: flex;
@@ -105,8 +106,70 @@ p{
     color: #cd7f32;
 }
 
-.sponsor-section.partners h2 {
-    color: #6495ED;
+/* Our Partners section styles */
+.sponsor-section.our-partners h2 {
+    color: #d4af37;
+}
+
+.partner-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.partner-logo {
+    flex: 0 0 auto;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    height: auto;
+}
+
+.partner-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.partner-info {
+    flex: 1;
+    min-width: 300px;
+    padding: 1rem;
+}
+
+.partner-info h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.partner-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--dark-color);
+}
+
+.partner-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.partner-info a:hover {
+    color: var(--light-color);
+    text-decoration: underline;
 }
 
 .sponsor-section.contact h2 {

@@ -25,11 +25,12 @@ body {
 }
 
 .donate-hero {
-    background-image: url('https://img.freepik.com/free-vector/sunset-city-background_1092-42.jpg'); /* insert a link of your chosen image! */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    height: 50vh;
+    background-image: url('../images/donate.jpg'); /* insert a link of your chosen image! */
+    background-size: cover; /* 确保左右不留白 */
+    background-position: center top; /* 优化图片显示位置 */
+    background-attachment: scroll; /* 让图片随页面滚动，有利于完整显示 */
+    height: auto; /* 与team页面保持一致 */
+    min-height: 75vh; /* 与team页面保持相同的高度 */
     margin: 0;
     text-align: center;
     display: flex;
@@ -37,6 +38,7 @@ body {
     justify-content: center;
     color: black; /* this changes the color of the "donate" text */
     font-size: 4rem;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 h1 {

@@ -5,12 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link rel="icon" type="image/x-icon" href="../header-footer/ig_logo.jpg">-->
     <link rel="icon" type="image/png" href="../header-footer/favicon.ico">
-    <title>About Us</title>
+    <title>Our Teams</title>
     <link rel="stylesheet" href="about-style.css">
     <link rel="stylesheet" href="../index-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        .teams-container {
+            display: flex;
+            margin: 2rem 0;
+        }
+        .team-subnav {
+            width: 250px;
+            background-color: var(--light-color);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-right: 2rem;
+            height: fit-content;
+        }
+        .team-subnav h3 {
+            color: var(--dark-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        .team-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--dark-color);
+            text-decoration: none;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+        .team-link:hover {
+            color: var(--primary-color);
+        }
+        .team-link.active {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .sub-team-link {
+            padding-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .team-content {
+            flex: 1;
+            background-color: #fff;
+            padding: 0 2rem 2rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .team-content-section {
+            display: none;
+        }
+        .team-content-section.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
@@ -22,7 +73,7 @@
                     <td style="text-align: left;">
                         <span style="line-height: 1"><b>  </b></span>
                         <img src="../header-footer/logo-Shanghai-small.png" alt="Logo" class="header-logo">
-                        <span style="line-height: 1"><b>INTEGIRLS Shanghai</b></span>
+                        <span style="line-height: 1"><b>INTEGIRLS SHANGHAI</b></span>
                     </td>
                     <td style="text-align: right;">
                         <a href="../index.html">Home</a> |
@@ -38,94 +89,396 @@
         <main>
             <section class="about-hero">
                 <div class="container">
-                    <h1 class="fade-in">Our Team</h1>
+                    <h1 class="fade-in">Our Teams</h1>
                 </div>
             </section>
 
             <div class="container">
-                <section class="team-section">
-                    <div class="team-grid">
-                        <!-- to add a team member: copy paste from <div class="team-member"> to </div> -->
-                        <!-- to edit content: <h3> section is the name, <p> is the bio of the member -->
-                        <!-- and to edit the photo upload the image online (using like imgbb or smt) then-->
-                        <!-- copy paste the link for the photo into it. i would suggest changing photo to like -->
-                        <!-- (Name)'s Photo or something -->
-                        <!-- if you want to change the background photo at the top of the page, go to about-style.css -->
-                        <!-- find .about-hero and similarly replace the url with the link to the photo -->
-                        <div class="team-member">
-                            <img src="photo/1 - Lola Huang.jpg" alt="Lola Huang">
-                            <h3>Lola Huang</h3>
-                            <h4>Founder, Director, and Problem Writer</h4>
-                            <p>Hi! I’m Lola, a junior at Shanghai Pinghe School. I love math – it’s granted me the freedom to temporarily reside in a world that feels less complex and chaotic. I’ve qualified for the USAMO, won team top 10 in ARML, and placed in multiple other math tournaments. Research-wise I’m interested in discrete mathematics, origami theory, and the idea of fractionalization in multiple disciplines. Outside of math, I enjoy solving witty puzzles, reading poetry, designing board games, and dancing – ballet has been my passion for twelve years. Last summer at the Ross Mathematics Program, I was truly inspired by its collaborative spirit, which reinforced my belief in the power of an engaging community.  Through INTEGIRLS, I hope to share my love of math and help, following a similar vein, foster an inclusive, supportive community of female math enthusiasts. </p>
+                <div class="teams-container">
+                    <!-- Team Navigation -->
+                    <div class="team-subnav">
+                        <h3>Team Seasons</h3>
+                        <div class="team-link active" data-team="fall-2025">Fall 2025 Team</div>
+                        <div class="team-link sub-team-link" data-team="fall-2025-executive">Executive</div>
+                        <div class="team-link sub-team-link" data-team="fall-2025-problem">Problem Writing</div>
+                        <div class="team-link sub-team-link" data-team="fall-2025-alumni">Alumni</div>
+                        <br>
+                        <div class="team-link" data-team="spring-2025">Spring 2025 Team</div>
+                        <div class="team-link sub-team-link" data-team="spring-2025-executive">Executive</div>
+                        <div class="team-link sub-team-link" data-team="spring-2025-problem">Problem Writing</div>
+                    </div>
+
+                    <!-- Team Content -->
+                    <div class="team-content">
+                        <!-- Fall 2025 Team Content -->
+                        <div id="fall-2025" class="team-content-section">
+                            <h2>Fall 2025 Team</h2>
                         </div>
-                        <div class="team-member">
-                            <img src="photo/2 - Joella Deng.jpg" alt="Joella Deng">
-                            <h3>Joella Deng</h3>
-                            <h4>Vice President, Operation Lead, and Problem Writer</h4>
-                            <p>Hi, I’m Joella Deng, a junior from Shanghai Pinghe School. I’ve participated in many math competitions including the AIME and Euclid, and I’m extremely passionate about the application of mathematics in physics and sports. Apart from math, I am an avid basketball player – I’m the captain of our school’s girls’ varsity team. I also play Tetris and card games in my freetime. Through INTEGIRLS, I aim to inspire and empower girls to discover their interest in math and other areas of STEM.</p>
+
+                        <div id="fall-2025-executive" class="team-content-section">
+                            <h2>Fall 2025 Team - Executive</h2>
+                            <div class="team-grid">
+                                <div class="team-member">
+                                    <img src="2025fall-exec/1 - Lola Huang.jpg" alt="Lola Huang">
+                                    <h3>Lola Huang</h3>
+                                    <h4>Founder, Director, and Problem Writer</h4>
+                                    <p>Hi! I'm Lola, a senior at Shanghai Pinghe School. I love math – it's granted me the freedom to temporarily reside in a world that feels less complex and chaotic. I've qualified for the USAMO, won team top 10 in ARML, and placed in multiple other math tournaments. Research-wise I'm interested in discrete mathematics, origami theory, and the idea of fractionalization in multiple disciplines. Outside of math, I enjoy solving witty puzzles, reading poetry, designing board games, and dancing – ballet has been my passion for twelve years. Last summer at the Ross Mathematics Program, I was truly inspired by its collaborative spirit, which reinforced my belief in the power of an engaging community. Through INTEGIRLS, I hope to share my love of math and help, following a similar vein, foster an inclusive, supportive community of female math enthusiasts.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025fall-exec/2 - Joella Deng.jpg" alt="Joella Deng">
+                                    <h3>Joella Deng</h3>
+                                    <h4>Vice President, Operation Lead, and Problem Writer</h4>
+                                    <p>Hi, I'm Joella Deng, a senior from Shanghai Pinghe School. I've participated in many math competitions including the AIME and Euclid, and I'm extremely passionate about the application of mathematics in physics and sports. Apart from math, I am an avid basketball player – I'm the captain of our school's girls' varsity team. I also play Tetris and card games in my freetime. Through INTEGIRLS, I aim to inspire and empower girls to discover their interest in math and other areas of STEM.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025fall-exec/3 - Carmen Chen.jpg" alt="Carmen Chen">
+                                    <h3>Carmen Chen</h3>
+                                    <h4>Associate Vice President</h4>
+                                    <p>Hi! I'm Carmen, a senior at Shanghai Pinghe School. I've been involved in math and physics competitions like AIME and Physics Bowl. Besides that, I'm a member of the school rowing club and enjoys travelling all around the world in holidays. Through integirls, I hope to encourage more girls to pursue their interests in STEM.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025fall-exec/4 - Nina Du.jpg" alt="Nina Du">
+                                    <h3>Nina Du</h3>
+                                    <h4>Events Organization Director</h4>
+                                    <p>Hi! I am Nina, a senior at the Shanghai World Foreign Language Academy (WFLA). I had participated in numerous mathematics competitions, including AIME and BMO. These experiences have honed my problem-solving skills and deepened my passion for mathematics. Furthermore, I have a diverse range of interests. I read comics and watch animes. Additionally, I have a keen interest in metaphysics. Through the Integirls platform, I aspire to inspire and support more young women to embark on their mathematical journeys.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025fall-exec/5 - Michelle Dai.jpg" alt="Michelle Dai">
+                                    <h3>Michelle Dai</h3>
+                                    <h4>Problem Writing Co-Director</h4>
+                                    <p>Hi! I'm Michelle, a senior at Shanghai American School Puxi. I have participated in several math competitions including AMC and Waterloo University contests. Other than math, I also enjoy playing volleyball, drawing, and my cat! I am impressed by the influence of the INTEGIRLS community and hope that I can also make a change through INTEGIRLS.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025fall-exec/6 - Michelle Yang.jpg" alt="Michelle Yang">
+                                    <h3>Michelle Yang</h3>
+                                    <h4>Problem Writing Co-Director</h4>
+                                    <p>I'm Michelle Yang, currently a senior at Shanghai Pinghe School. I've always been captivated by the completeness and elegance of math theorems. I've participated in competitions like AIME, Euclid, and many others. I'm also passionate about vocal music and love watching musicals, and I sleep as much as I can. I'm super excited to help others discover their passion for math, and I can't wait to grow and learn with everyone!</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025fall-exec/7 - Andrea Lei.jpg" alt="Andrea Lei">
+                                    <h3>Andrea Lei</h3>
+                                    <h4>Graphic Designs Director</h4>
+                                    <p>Hi I'm Andrea, a junior at Shanghai High School International Division. I've participated in many STEM competitions including UKMT-MOG, AMC, BBO, and more. During my free time, I like to dance, create art, and cuddle my cat~By joining INTEGIRLS, I hope to contribute to a movement empowering girls in math and help overcome the gender stereotypes regarding STEM fields in general!</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025fall-exec/8 - Daniel Huang.jpg" alt="Daniel Huang">
+                                    <h3>Daniel Huang</h3>
+                                    <h4>Tech Director</h4>
+                                    <p>Hi! I'm Daniel, a junior at Shanghai Starriver Bilingual School. I'm passionate about math and computer programming as a world where thoughts connect, and have participated in competitions such as AMC, AIME and NOIP. Aside from math and algorithms, I enjoy engaging in activities like reading, writing, music, and soccer. Through INTEGIRLS, I hope to build an inspiring, supportive, and interconnected community for girls to explore math.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025fall-exec/9 - Lillian Xu.jpg" alt="Lillian Xu">
+                                    <h3>Lillian Xu</h3>
+                                    <h4>Social Media Director</h4>
+                                    <p>Hiii! I'm Lillian, a senior at Shanghai World Foreign Language Academy. I've participated in a number of math competitions like AMC 12 and AIME, as well as team competitions like BMT. I was also a student in the Ross Mathematics Program this past summer. Other than math, I enjoy playing frisbee and boxing, and I'm also a huge fan of musicals! I hope to build a supportive community for girls in math through INTEGIRLS!</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025fall-exec/10 - Sophia Li.jpg" alt="Sophia Li">
+                                    <h3>Sophia Li</h3>
+                                    <h4>Local Outreach Co-director</h4>
+                                    <p>Hi! I'm Sophia, a senior at Shanghai American School Puxi High School. I've participated in math competitions such as AIME and have a strong passion in math and the interdisciplinary application of math, such as in physics or economics. Aside from math, I am passionate about the environment and the world that we live in. I love the oceans and forests and flowers and the beautiful culture of different regions of the world. Through INTEGIRLS, I hope to inspire more female & non-binary students for their interest and passion in math and build a supportive community.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025fall-exec/11 - Cindy Chen.jpg" alt="Cindy Chen">
+                                    <h3>Cindy Chen</h3>
+                                    <h4>International Outreach Director</h4>
+                                    <p>Hiiii! I'm Cindy, an 12th-grade student at YK Pao School. I have competed in several math competitions, including AIME and Euclid, and achieved USAMO qualifier. Outside of academics, I'm a national second-level athlete in wrestling and boxing. I also enjoy singing, playing the erhu, and playing card and chess games. I can't wait to collaborate with other outreach directors and contribute to the INTEGIRLS community's mission of bridging the gender gap in STEM!</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="team-member">
-                            <img src="photo/3 - Carmen Chen.jpg" alt="Carmen Chen">
-                            <h3>Carmen Chen</h3>
-                            <h4>Associate Vice President</h4>
-                            <p>Hi! I’m Carmen, a junior at Shanghai Pinghe School. I’ve been involved in math and physics competitions like AIME and Physics Bowl. Besides that, I’m a member of the school rowing club and enjoys travelling all around the world in holidays. Through integirls, I hope to encourage more girls to pursue their interests in STEM.</p>
+
+                        <div id="fall-2025-problem" class="team-content-section">
+                            <h2>Fall 2025 Team - Problem Writing</h2>
+                            <div class="team-grid">
+
+                                <div class="team-member">
+                                    <img src="2025fall-pw/1 - Leon Liang.jpg" alt="Leon Liang">
+                                    <h3>Leon Liang</h3>
+                                    <p>I’m Leon, a sophomore at Shanghai Pinghe School with a passion for mathematics and its connections to philosophy and other disciplines. My favorite areas of math are analysis and Euclidean geometry. I’ve participated in competitions like AMC and AIME, and I run an independent math knowledge-sharing account along with a math history website. Outside of math, I sing in a choir and enjoy watching musicals.</p>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="2025fall-pw/2 - Jaycee Han.jpg" alt="Jaycee Han">
+                                    <h3>Jaycee Han</h3>
+                                    <p>Hello everyone! My name is Jaycee Han, and I’m a sophomore at Shanghai Pinghe School. I qualified for AIME in seventh grade and represented Mainland China in the 2024 AIMO Finals. My passion for mathematics began in elementary school, and for me, math competitions are not just about winning awards—they’re also opportunities to learn and connect with like-minded friends. Outside of math, I enjoy playing Phigros and creating funny video clips. If you’re into either, feel free to strike up a conversation with me!</p>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="2025fall-pw/3 - Shawn Hui.jpg" alt="Shawn Hui">
+                                    <h3>Shawn Hui</h3>
+                                    <p>Hi, I’m Shawn Hui, a sophomore at Shanghai Pinghe School. I developed a strong interest in mathematics, especially geometry, in middle school. I’m also passionate about computer science and have participated in numerous programming competitions. In addition, I actively explore AI technology and enjoy integrating it with other fields. Beyond academics, I love playing Sudoku, chess, and various card games. I also enjoy tennis and badminton in my free time.</p>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="2025fall-pw/4 - Justin Wu.jpg" alt="Justin Wu">
+                                    <h3>Justin Wu</h3>
+                                    <p>Hi, I’m Justin, a sophomore at Shanghai Pinghe School. I’ve participated in numerous math competitions and activities both on and off campus. In my spare time, I enjoy challenging my classmates with original math problems. I find it fascinating to explore the deeper nature and true beauty of mathematics. I hope you’d enjoy my problems at INTEGIRLS!</p>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="2025fall-pw/5 - Daniel Zhang.png" alt="Daniel Zhang">
+                                    <h3>Daniel Zhang</h3>
+                                    <p>Hi, I'm Daniel Zhang. I am a sophomore at Shanghai Pinghe School and I have been doing competitive math since middle school. My other interests include programming, playing the piano, and logic puzzles like the Rubik's cube and chess variants.</p>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="2025fall-pw/6 - Alan Zhang.jpg" alt="Alan Zhang">
+                                    <h3>Alan Zhang</h3>
+                                    <p>I’m Alan, a sophomore at Shanghai Pinghe School with a deep appreciation for mathematics as an art—both create beauty and rationality from nothing. I believe high school math education has its flaws, often focusing too much on foundational topics instead of allowing students to explore specific areas in depth. That’s why I enjoy delving into fields like algebra, where I can fully engage with the concepts that fascinate me. I hope to share my perspective on math with others and inspire them to see its true beauty.</p>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="2025fall-pw/7 - Chris Zhou.png" alt="Chris Zhou">
+                                    <h3>Chris Zhou</h3>
+                                    <p>I’m Chris, a student at Shanghai Pinghe School with a deep passion for mathematics that began in primary school. I’ve received an Outstanding Award in HiMCM and am a two-time AIME qualifier. In my free time, I enjoy tackling advanced math problems, playing the piano, and staying active through soccer, badminton, and chess. Now, I hope to share my enthusiasm and inspire more students to discover the beauty of mathematics.</p>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="2025fall-pw/8 - Yiyang Zhang.jpg" alt="Yiyang Zhang">
+                                    <h3>Yiyang Zhang</h3>
+                                    <p>I am Zhang Yiyang, I picked up playing chess at a young age and since then, I have been fascinated by the process of tackling problems and solving them. That's how I became interested in maths, I have been taking part in math competitions and contests since my primary school. I still enjoy digging into various fields of math, whether it is solving problems or coming up with them. I hope you can also find the glee through your course of solving the problems we present.</p>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="2025fall-pw/9 - Jim Liu.jpg" alt="Jim Liu">
+                                    <h3>Jim Liu</h3>
+                                    <p>Hi! I'm Jim, a sophomore at Shanghai Pinghe School. I have many hobbies, including math, literature, and laughing. My passion in math is one of my greatest and most persistent passions, and I have participated in AMC8,10,12, AIME, BMO, and BMT. Maggie</p>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="2025fall-pw/10 - Chen.jpg" alt="Chen">
+                                    <h3>Chen</h3>
+                                    <p>I'm Maggie Chen, and I’m a sophomore from Shanghai Pinghe School. I have a deep passion for mathematics and enjoy exploring its real-world connections. I’ve participated in the AMC and AIME and am currently preparing for the Euclid Mathematics Contest. These experiences have strengthened my appreciation for the power of mathematical thinking and its applications in solving real-life problems. In my free time, I love playing the violin, watching gymnastics competitions, and exploring fun mathematical concepts through games like 2048 and Tetris.</p>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="2025fall-pw/11 - Ian Zhang.jpg" alt="Ian Zhang">
+                                    <h3>Ian Zhang</h3>
+                                    <p>I am Ian, a sophomore at Shanghai Pinghe School. Passionate about mathematics, I have a particular interest in geometry and combinatorics and hope to inspire others in the field. Being an AIME qualifier, I actively engage in mathematical problem-solving and competitions. Outside of math, I enjoy badminton, as well as reading and writing!</p>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="2025fall-pw/12 - Michael Chen.png" alt="Michael Chen">
+                                    <h3>Michael Chen</h3>
+                                    <p>I'm Michael Chen, a sophomore at German Swiss International School. For most of my life, I've always been fascinated by mathematics, leading me to participate in numerous competitions. Most notably, I qualified for USAJMO and BMO2. I have been writing problems for competitions for almost a year. Outside of math, my hobbies include coding, origami, and playing the violin.</p>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="2025fall-pw/13 - Emily.jpg" alt="Emily">
+                                    <h3>Emily</h3>
+                                    <p>Hi, I'm Emily from Shanghai Guanghua Qidi College. I have a deep passion for mathematics and computer science, viewing them as realms where logic and creativity intersect. I've participated in math competitions such as AMC, AIME, and BMO. Currently, I'm delving into the fascinating world of blockchain and cryptographic systems. Beyond academics, I enjoy a variety of activities such as ballet dancing, rock climbing and scuba diving. Also, I'm a member of a HJ2's game strategy club. Through INTEGIRLS, I wish to connect with like-minded individuals who share a passion for mathematics and a relentless curiosity about the world. I look forward to being a member of the inspiring community where we explore the beauty of math and the endless possibilities it holds!</p>
+                                </div>
+
+                            </div>
                         </div>
-                        <div class="team-member">
-                            <img src="photo/4 - Nina Du.jpg" alt="Nina Du">
-                            <h3>Nina Du</h3>
-                            <h4>Events Organization Director</h4>
-                            <p>Hi! I am Nina, a junior at the Shanghai World Foreign Language Academy (WFLA). I had participated in numerous mathematics competitions, including AIME and BMO. These experiences have honed my problem-solving skills and deepened my passion for mathematics. Furthermore, I have a diverse range of interests. I read comics and watch animes. Additionally, I have a keen interest in metaphysics. Through the Integirls platform, I aspire to inspire and support more young women to embark on their mathematical journeys.</p>
+
+                        <div id="fall-2025-alumni" class="team-content-section">
+                            <h2>Fall 2025 Team - Alumni</h2>
+                            
+                            <div class="team-grid">
+                                
+                                <div class="team-member">
+                                    <img src="2025fall-alum/1 - Yuyang Wang.jpg" alt="Yuyang Wang">
+                                    <h3>Yuyang Wang</h3>
+                                    <p>Yuyang is a freshman at Caltech. He has been intrigued by math since a young age, and has enjoyed participating in various math contests, prompting him to explore a broad range of mathematical topics. His specific research interests include dynamic systems and robotics control. Having led Pinghe's math club for one year, he greatly enjoys sharing mathematical insights with his peers and learning from them in return.</p>
+                                </div>
+                                
+                                
+                                <div class="team-member">
+                                    <img src="2025fall-alum/2 - Jingle Liang.jpg" alt="Jingle Liang">
+                                    <h3>Jingle Liang</h3>
+                                    <p>Jingle is a freshman at the University of Chicago. She has a passion for mathematics, actively participating in competitions and independently studying linear algebra and graph theory. Jingle applies her mathematical skills to construct models in fields such as physics. Beyond academics, she is involved in debate and karate, and enjoys creative pursuits like writing, painting, playing the piano, and playing Tetris. Through InteGIRLS, Jingle aims to inspire others to explore mathematics, fostering a supportive and welcoming community for female explorers.</p>
+                                </div>
+                                
+                                
+                                <div class="team-member">
+                                    <img src="2025fall-alum/3 - Suni Yao.png" alt="Suni Yao">
+                                    <h3>Suni Yao</h3>
+                                    <p>Stephanie is a senior at Shanghai Pinghe School. She is passionate about mathematics, physics, computer science, photography, and specialized skills like LaTeX and front-end design. Her love for problem-solving began in primary school with competitive mathematics. Through attending math camps, participating in math contests, teaching children mathematics, and engaging in related research, she has deepened her enthusiasm and is eager to pursue mathematics in college alongside other enthusiasts. Currently, her interests focus on number theory and geometry-related topics, though she remains open to exploring new areas. Additionally, Stephanie is an avid music enthusiast, rarely seen without her earphones.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="team-member">
-                            <img src="photo/5 - Michelle Dai.jpg" alt="Michelle Dai">
-                            <h3>Michelle Dai</h3>
-                            <h4>Problem Writing Co-Director</h4>
-                            <p>Hi! I’m Michelle, a junior at Shanghai American School Puxi. I have participated in several math competitions including AMC and Waterloo University contests. Other than math, I also enjoy playing volleyball, drawing, and my cat! I am impressed by the influence of the INTEGIRLS community and hope that I can also make a change through INTEGIRLS.</p>
+
+                        <!-- Spring 2025 Team Content -->
+                        <div id="spring-2025" class="team-content-section">
+                            <h2>Spring 2025 Team</h2>
                         </div>
-                        <div class="team-member">
-                            <img src="photo/6 - Michelle Yang.jpg" alt="Michelle Yang">
-                            <h3>Michelle Yang</h3>
-                            <h4>Problem Writing Co-Director</h4>
-                            <p>I’m Michelle Yang, currently a junior at Shanghai Pinghe School. I’ve always been captivated by the completeness and elegance of math theorems. I’ve participated in competitions like AIME, Euclid, and many others. I’m also passionate about vocal music and love watching musicals, and I sleep as much as I can. I’m super excited to help others discover their passion for math, and I can't wait to grow and learn with everyone!</p>
+
+                        <div id="spring-2025-executive" class="team-content-section">
+                            <h2>Spring 2025 Team - Executive</h2>
+                            <div class="team-grid">
+                                <div class="team-member">
+                                    <img src="2025spring-exec/1 - Lola Huang.jpg" alt="Lola Huang">
+                                    <h3>Lola Huang</h3>
+                                    <h4>Founder, Director, and Problem Writer</h4>
+                                    <p>Hi! I'm Lola, a junior at Shanghai Pinghe School. I love math – it's granted me the freedom to temporarily reside in a world that feels less complex and chaotic. I've qualified for the USAMO, won team top 10 in ARML, and placed in multiple other math tournaments. Research-wise I'm interested in discrete mathematics, origami theory, and the idea of fractionalization in multiple disciplines. Outside of math, I enjoy solving witty puzzles, reading poetry, designing board games, and dancing – ballet has been my passion for twelve years. Last summer at the Ross Mathematics Program, I was truly inspired by its collaborative spirit, which reinforced my belief in the power of an engaging community.  Through INTEGIRLS, I hope to share my love of math and help, following a similar vein, foster an inclusive, supportive community of female math enthusiasts. </p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-exec/2 - Joella Deng.jpg" alt="Joella Deng">
+                                    <h3>Joella Deng</h3>
+                                    <h4>Vice President, Operation Lead, and Problem Writer</h4>
+                                    <p>Hi, I'm Joella Deng, a junior from Shanghai Pinghe School. I've participated in many math competitions including the AIME and Euclid, and I'm extremely passionate about the application of mathematics in physics and sports. Apart from math, I am an avid basketball player – I'm the captain of our school's girls' varsity team. I also play Tetris and card games in my freetime. Through INTEGIRLS, I aim to inspire and empower girls to discover their interest in math and other areas of STEM.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-exec/3 - Carmen Chen.jpg" alt="Carmen Chen">
+                                    <h3>Carmen Chen</h3>
+                                    <h4>Associate Vice President</h4>
+                                    <p>Hi! I'm Carmen, a junior at Shanghai Pinghe School. I've been involved in math and physics competitions like AIME and Physics Bowl. Besides that, I'm a member of the school rowing club and enjoys travelling all around the world in holidays. Through integirls, I hope to encourage more girls to pursue their interests in STEM.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-exec/4 - Nina Du.jpg" alt="Nina Du">
+                                    <h3>Nina Du</h3>
+                                    <h4>Events Organization Director</h4>
+                                    <p>Hi! I am Nina, a junior at the Shanghai World Foreign Language Academy (WFLA). I had participated in numerous mathematics competitions, including AIME and BMO. These experiences have honed my problem-solving skills and deepened my passion for mathematics. Furthermore, I have a diverse range of interests. I read comics and watch animes. Additionally, I have a keen interest in metaphysics. Through the Integirls platform, I aspire to inspire and support more young women to embark on their mathematical journeys.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-exec/5 - Michelle Dai.jpg" alt="Michelle Dai">
+                                    <h3>Michelle Dai</h3>
+                                    <h4>Problem Writing Co-Director</h4>
+                                    <p>Hi! I'm Michelle, a junior at Shanghai American School Puxi. I have participated in several math competitions including AMC and Waterloo University contests. Other than math, I also enjoy playing volleyball, drawing, and my cat! I am impressed by the influence of the INTEGIRLS community and hope that I can also make a change through INTEGIRLS.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-exec/6 - Michelle Yang.jpg" alt="Michelle Yang">
+                                    <h3>Michelle Yang</h3>
+                                    <h4>Problem Writing Co-Director</h4>
+                                    <p>I'm Michelle Yang, currently a junior at Shanghai Pinghe School. I've always been captivated by the completeness and elegance of math theorems. I've participated in competitions like AIME, Euclid, and many others. I'm also passionate about vocal music and love watching musicals, and I sleep as much as I can. I'm super excited to help others discover their passion for math, and I can't wait to grow and learn with everyone!</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-exec/7 - Andrea Lei.jpg" alt="Andrea Lei">
+                                    <h3>Andrea Lei</h3>
+                                    <h4>Graphic Designs Director</h4>
+                                    <p>Hi I'm Andrea, a sophomore at Shanghai High School International Division. I've participated in many STEM competitions including UKMT-MOG, AMC, BBO, and more. During my free time, I like to dance, create art, and cuddle my cat~By joining INTEGIRLS, I hope to contribute to a movement empowering girls in math and help overcome the gender stereotypes regarding STEM fields in general!</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-exec/8 - Daniel Huang.jpg" alt="Daniel Huang">
+                                    <h3>Daniel Huang</h3>
+                                    <h4>Tech Director</h4>
+                                    <p>Hi! I'm Daniel, a sophomore at Shanghai Starriver Bilingual School. I'm passionate about math and computer programming as a world where thoughts connect, and have participated in competitions such as AMC, AIME and NOIP. Aside from math and algorithms, I enjoy engaging in activities like reading, writing, music, and soccer. Through INTEGIRLS, I hope to build an inspiring, supportive, and interconnected community for girls to explore math.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-exec/9 - Lillian Xu.jpg" alt="Lillian Xu">
+                                    <h3>Lillian Xu</h3>
+                                    <h4>Social Media Director</h4>
+                                    <p>Hiii! I'm Lillian, a senior at Shanghai World Foreign Language Academy. I've participated in a number of math competitions like AMC 12 and AIME, as well as team competitions like BMT. I was also a student in the Ross Mathematics Program this past summer. Other than math, I enjoy playing frisbee and boxing, and I'm also a huge fan of musicals! I hope to build a supportive community for girls in math through INTEGIRLS!</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-exec/10 - Jingle Liang.jpg" alt="Jingle Liang">
+                                    <h3>Jingle Liang</h3>
+                                    <h4>Local Outreach Co-director</h4>
+                                    <p>Hi! I'm Jingle, a G12 student at WLSA Shanghai Academy. I love math, and apart from participating in competitions, I also self studied some linear algebra and graph theory. I also applied my mathematics skills in constructing models in fields like physics. Beyond academics, I'm involved in debate and karate, and I enjoy creative outlets like writing, painting, and playing piano. (ps. and also playing tetris) Through InteGIRLS, I hope to inspire others to explore math, creating a more supportive and friendly community for female explorers!</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-exec/11 - Sophia Li.jpg" alt="Sophia Li">
+                                    <h3>Sophia Li</h3>
+                                    <h4>Local Outreach Co-director</h4>
+                                    <p>Hi! I'm Sophia, a junior at Shanghai American School Puxi High School. I've participated in math competitions such as AIME and have a strong passion in math and the interdisciplinary application of math, such as in physics or economics. Aside from math, I am passionate about the environment and the world that we live in. I love the oceans and forests and flowers and the beautiful culture of different regions of the world. Through INTEGIRLS, I hope to inspire more female & non-binary students for their interest and passion in math and build a supportive community.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-exec/12 - Cindy Chen.jpg" alt="Cindy Chen">
+                                    <h3>Cindy Chen</h3>
+                                    <h4>International Outreach Director</h4>
+                                    <p>Hiiii! I'm Cindy, an 11th-grade student at YK Pao School. I have competed in several math competitions, including AIME and Euclid, and achieved USAMO qualifier. Outside of academics, I'm a national second-level athlete in wrestling and boxing. I also enjoy singing, playing the erhu, and playing card and chess games. I can't wait to collaborate with other outreach directors and contribute to the INTEGIRLS community's mission of bridging the gender gap in STEM!</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="team-member">
-                            <img src="photo/7 - Andrea Lei.jpg" alt="Andrea Lei">
-                            <h3>Andrea Lei</h3>
-                            <h4>Graphic Designs Director</h4>
-                            <p>Hi I’m Andrea, a sophomore at Shanghai High School International Division. I’ve participated in many STEM competitions including UKMT-MOG, AMC, BBO, and more. During my free time, I like to dance, create art, and cuddle my cat~By joining INTEGIRLS, I hope to contribute to a movement empowering girls in math and help overcome the gender stereotypes regarding STEM fields in general!</p>
+
+                        <div id="spring-2025-problem" class="team-content-section">
+                            <h2>Spring 2025 Team - Problem Writing</h2>
+                            <div class="team-grid">
+                                <div class="team-member">
+                                    <img src="2025spring-pw/1 - Leon Liang.jpg" alt="Leon Liang">
+                                    <h3>Leon Liang</h3>
+                                    <h4>Problem Writer</h4>
+                                    <p>I'm Leon, a sophomore at Shanghai Pinghe School with a passion for mathematics and its connections to philosophy and other disciplines. My favorite areas of math are analysis and Euclidean geometry. I've participated in competitions like AMC and AIME, and I run an independent math knowledge-sharing account along with a math history website. Outside of math, I sing in a choir and enjoy watching musicals.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-pw/2 - Jaycee Han.jpg" alt="Jaycee Han">
+                                    <h3>Jaycee Han</h3>
+                                    <h4>Problem Writer</h4>
+                                    <p>Hello everyone! My name is Jaycee Han, and I’m a sophomore at Shanghai Pinghe School. I qualified for AIME in seventh grade and represented Mainland China in the 2024 AIMO Finals. My passion for mathematics began in elementary school, and for me, math competitions are not just about winning awards—they’re also opportunities to learn and connect with like-minded friends. Outside of math, I enjoy playing Phigros and creating funny video clips. If you’re into either, feel free to strike up a conversation with me!</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-pw/3 - Shawn Hui.jpg" alt="Shawn Hui">
+                                    <h3>Shawn Hui</h3>
+                                    <h4>Problem Writer</h4>
+                                    <p>Hi, I’m Shawn Hui, a sophomore at Shanghai Pinghe School. I developed a strong interest in mathematics, especially geometry, in middle school. I’m also passionate about computer science and have participated in numerous programming competitions. In addition, I actively explore AI technology and enjoy integrating it with other fields. Beyond academics, I love playing Sudoku, chess, and various card games. I also enjoy tennis and badminton in my free time.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-pw/4 - Justin Wu.jpg" alt="Justin Wu">
+                                    <h3>Justin Wu</h3>
+                                    <h4>Problem Writer</h4>
+                                    <p>Hi, I’m Justin, a sophomore at Shanghai Pinghe School. I’ve participated in numerous math competitions and activities both on and off campus. In my spare time, I enjoy challenging my classmates with original math problems. I find it fascinating to explore the deeper nature and true beauty of mathematics. I hope you’d enjoy my problems at INTEGIRLS!</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-pw/5 - Stephanie Yao.png" alt="Stephanie Yao">
+                                    <h3>Stephanie Yao</h3>
+                                    <h4>Problem Writer</h4>
+                                    <p>Hi guys! This is Stephanie, a senior from Shanghai Pinghe School. I’m interested in math, physics, CS, photography, fancy stuff like LaTeX, front-end design, etc. Problem solving has been a rooted passion since primary school when I started with competitive math! After more exploration, including attending math camps, grinding math contests, teaching kids math, and focusing on related research, I feel excited to further my math study in college with other enthusiasts. Currently my interest lies in number theory, geometry-related topics but I am open to explore!! Btw, I am also a crazy music addict who nearly never takes off my earphones.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-pw/6 - Daniel Zhang.png" alt="Daniel Zhang">
+                                    <h3>Daniel Zhang</h3>
+                                    <h4>Problem Writer</h4>
+                                    <p>Hi, I'm Daniel Zhang. I am a sophomore at Shanghai Pinghe School and I have been doing competitive math since middle school. My other interests include programming, playing the piano, and logic puzzles like the Rubik's cube and chess variants.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-pw/7 - Alan Zhang.jpg" alt="Alan Zhang">
+                                    <h3>Alan Zhang</h3>
+                                    <h4>Problem Writer</h4>
+                                    <p>I’m Alan, a sophomore at Shanghai Pinghe School with a deep appreciation for mathematics as an art—both create beauty and rationality from nothing. I believe high school math education has its flaws, often focusing too much on foundational topics instead of allowing students to explore specific areas in depth. That’s why I enjoy delving into fields like algebra, where I can fully engage with the concepts that fascinate me. I hope to share my perspective on math with others and inspire them to see its true beauty.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-pw/8 - Chris Zhou.png" alt="Chris Zhou">
+                                    <h3>Chris Zhou</h3>
+                                    <h4>Problem Writer</h4>
+                                    <p>I’m Chris, a student at Shanghai Pinghe School with a deep passion for mathematics that began in primary school. I’ve received an Outstanding Award in HiMCM and am a two-time AIME qualifier. In my free time, I enjoy tackling advanced math problems, playing the piano, and staying active through soccer, badminton, and chess. Now, I hope to share my enthusiasm and inspire more students to discover the beauty of mathematics.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-pw/9 - Yuyang Wang.jpg" alt="Yuyang Wang">
+                                    <h3>Yuyang Wang</h3>
+                                    <h4>Problem Writer</h4>
+                                    <p>I’m Yuyang, a senior at Shanghai Pinghe School with a deep fascination for mathematics. Competing in various math contests has encouraged me to explore a wide range of mathematical topics, and my research interests lie in system dynamics and robotics control. As a former leader of my school’s math club, I love sharing mathematical insights with my peers and learning from them in return. I’m excited to connect with others and share my passion for math through this opportunity.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-pw/10 - Yiyang Zhang.jpg" alt="Yiyang Zhang">
+                                    <h3>Yiyang Zhang</h3>
+                                    <h4>Problem Writer</h4>
+                                    <p>I am Zhang Yiyang, I picked up playing chess at a young age and since then, I have been fascinated by the process of tackling problems and solving them. That's how I became interested in maths, I have been taking part in math competitions and contests since my primary school. I still enjoy digging into various fields of math, whether it is solving problems or coming up with them. I hope you can also find the glee through your course of solving the problems we present.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-pw/11 - Jim Liu.jpg" alt="Jim Liu">
+                                    <h3>Jim Liu</h3>
+                                    <h4>Problem Writer</h4>
+                                    <p>Hi! I'm Jim, a sophomore at Shanghai Pinghe School. I have many hobbies, including math, literature, and laughing. My passion in math is one of my greatest and most persistent passions, and I have participated in AMC8,10,12, AIME, BMO, and BMT.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-pw/12 - Maggie Chen.jpg" alt="Maggie Chen">
+                                    <h3>Maggie Chen</h3>
+                                    <h4>Problem Writer</h4>
+                                    <p>I'm Maggie Chen, and I’m a sophomore from Shanghai Pinghe School. I have a deep passion for mathematics and enjoy exploring its real-world connections. I’ve participated in the AMC and AIME and am currently preparing for the Euclid Mathematics Contest. These experiences have strengthened my appreciation for the power of mathematical thinking and its applications in solving real-life problems. In my free time, I love playing the violin, watching gymnastics competitions, and exploring fun mathematical concepts through games like 2048 and Tetris.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-pw/13 - Ian Zhang.jpg" alt="Ian Zhang">
+                                    <h3>Ian Zhang</h3>
+                                    <h4>Problem Writer</h4>
+                                    <p>I am Ian, a sophomore at Shanghai Pinghe School. Passionate about mathematics, I have a particular interest in geometry and combinatorics and hope to inspire others in the field. Being an AIME qualifier, I actively engage in mathematical problem-solving and competitions. Outside of math, I enjoy badminton, as well as reading and writing!</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-pw/14 - Michael Chen.png" alt="Michael Chen">
+                                    <h3>Michael Chen</h3>
+                                    <h4>Problem Writer</h4>
+                                    <p>I'm Michael Chen, a sophomore at German Swiss International School. For most of my life, I've always been fascinated by mathematics, leading me to participate in numerous competitions. Most notably, I qualified for USAJMO and BMO2. I have been writing problems for competitions for almost a year. Outside of math, my hobbies include coding, origami, and playing the violin.</p>
+                                </div>
+                                <div class="team-member">
+                                    <img src="2025spring-pw/15 - Emily.jpg" alt="Emily">
+                                    <h3>Emily</h3>
+                                    <h4>Problem Writer</h4>
+                                    <p>Hi, I'm Emily from Shanghai Guanghua Qidi College. I have a deep passion for mathematics and computer science, viewing them as realms where logic and creativity intersect. I've participated in math competitions such as AMC, AIME, and BMO. Currently, I'm delving into the fascinating world of blockchain and cryptographic systems. Beyond academics, I enjoy a variety of activities such as ballet dancing, rock climbing and scuba diving. Also, I'm a member of a HJ2's game strategy club. Through INTEGIRLS, I wish to connect with like-minded individuals who share a passion for mathematics and a relentless curiosity about the world. I look forward to being a member of the inspiring community where we explore the beauty of math and the endless possibilities it holds!</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="team-member">
-                            <img src="photo/8 - Daniel Huang.jpg" alt="Daniel Huang">
-                            <h3>Daniel Huang</h3>
-                            <h4>Tech Director</h4>
-                            <p>Hi! I’m Daniel, a sophomore at Shanghai Starriver Bilingual School. I’m passionate about math and computer programming as a world where thoughts connect, and have participated in competitions such as AMC, AIME and NOIP. Aside from math and algorithms, I enjoy engaging in activities like reading, writing, music, and soccer. Through INTEGIRLS, I hope to build an inspiring, supportive, and interconnected community for girls to explore math.</p>
-                        </div>
-                        <div class="team-member">
-                            <img src="photo/9 - Lillian Xu.jpg" alt="Lillian Xu">
-                            <h3>Lillian Xu</h3>
-                            <h4>Social Media Director</h4>
-                            <p>Hiii! I’m Lillian, a junior at Shanghai World Foreign Language Academy. I’ve participated in a number of math competitions like AMC 12 and AIME, as well as team competitions like BMT. I was also a student in the Ross Mathematics Program this past summer. Other than math, I enjoy playing frisbee and boxing, and I’m also a huge fan of musicals! I hope to build a supportive community for girls in math through INTEGIRLS!</p>
-                        </div>
-                        <div class="team-member">
-                            <img src="photo/10 - Jingle Liang.jpg" alt="Jingle Liang">
-                            <h3>Jingle Liang</h3>
-                            <h4>Local Outreach Co-director</h4>
-                            <p>Hi! I’m Jingle, a G12 student at WLSA Shanghai Academy. I love math, and apart from participating in competitions, I also self studied some linear algebra and graph theory. I also applied my mathematics skills in constructing models in fields like physics. Beyond academics, I’m involved in debate and karate, and I enjoy creative outlets like writing, painting, and playing piano. (ps. and also playing tetris) Through InteGIRLS, I hope to inspire others to explore math, creating a more supportive and friendly community for female explorers!</p>
-                        </div>
-                        <div class="team-member">
-                            <img src="photo/11 - Sophia Li.jpg" alt="Sophia Li">
-                            <h3>Sophia Li</h3>
-                            <h4>Local Outreach Co-director</h4>
-                            <p>Hi! I’m Sophia, a junior at Shanghai American School Puxi High School. I’ve participated in math competitions such as AIME and have a strong passion in math and the interdisciplinary application of math, such as in physics or economics. Aside from math, I am passionate about the environment and the world that we live in. I love the oceans and forests and flowers and the beautiful culture of different regions of the world. Through INTEGIRLS, I hope to inspire more female & non-binary students for their interest and passion in math and build a supportive community.</p>
-                        </div>
-                        <div class="team-member">
-                            <img src="photo/12 - Cindy Chen.jpg" alt="Cindy Chen">
-                            <h3>Cindy Chen</h3>
-                            <h4>International Outreach Director</h4>
-                            <p>Hiiii! I’m Cindy, an 11th-grade student at YK Pao School. I have competed in several math competitions, including AIME and Euclid, and achieved USAMO qualifier. Outside of academics, I’m a national second-level athlete in wrestling and boxing. I also enjoy singing, playing the erhu, and playing card and chess games. I can’t wait to collaborate with other outreach directors and contribute to the INTEGIRLS community’s mission of bridging the gender gap in STEM!</p>
-                        </div>
-                        </div>
-                </section>
+                    </div>
+                </div>
             </div>
         </main>
 
@@ -138,5 +491,47 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Team navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const teamLinks = document.querySelectorAll('.team-link');
+            const teamContentSections = document.querySelectorAll('.team-content-section');
+            
+            // Set initial active state
+            document.getElementById('fall-2025-executive').classList.add('active');
+            document.querySelector('[data-team="fall-2025"]').classList.add('active');
+            document.querySelector('[data-team="fall-2025-executive"]').classList.add('active');
+            
+            // Also set Spring 2025 Executive as active by default
+            document.getElementById('spring-2025-executive').classList.add('active');
+            
+            // Add click event listeners
+            teamLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const teamId = this.getAttribute('data-team');
+                    
+                    // Remove active class from all links and content sections
+                    teamLinks.forEach(l => l.classList.remove('active'));
+                    teamContentSections.forEach(section => section.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // If the clicked link is a main team link (not a sub-team), show its Executive section
+                    if (teamId === 'fall-2025') {
+                        document.getElementById('fall-2025-executive').classList.add('active');
+                        document.querySelector('[data-team="fall-2025-executive"]').classList.add('active');
+                    } else if (teamId === 'spring-2025') {
+                        document.getElementById('spring-2025-executive').classList.add('active');
+                        document.querySelector('[data-team="spring-2025-executive"]').classList.add('active');
+                    } else {
+                        // For sub-team links, show the corresponding section
+                        document.getElementById(teamId).classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
